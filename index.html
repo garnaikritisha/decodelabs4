@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DevOps Project Tracker - Containerized web application built for DecodeLabs Industrial Training Kit Project 4. Tracks DevOps tasks, Docker lifecycles, and environment portability.">
+  <meta name="author" content="DecodeLabs DevOps Intern">
+  <meta name="theme-color" content="#0a0e17">
+  <title>DevOps Project Tracker | Containerized with Docker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20width=%22100%22%20height=%22100%22><text y=%22.9em%22 font-size=%2290%22>🐳</text></svg>">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-section">
+        <div class="brand-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="docker-icon" fill="currentColor">
+            <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.186.185.186m0 2.714h2.118a.186.186 0 00.186-.185V6.289a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.186v1.888c0 .102.082.185.185.185m-2.953 0h2.118a.186.186 0 00.186-.185V6.289a.186.186 0 00-.186-.186H8.076a.185.185 0 00-.185.186v1.888c0 .102.082.185.185.185m0 2.716h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186H8.076a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.955 0h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186H5.121a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.955 0h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186H2.166a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m11.864 0h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-8.91 2.715h2.119a.186.186 0 00.186-.185v-1.888a.186.186 0 00-.186-.186H5.121a.185.185 0 00-.185.186v1.888c0 .102.083.185.185.185m2.955 0h2.119a.186.186 0 00.186-.185v-1.888a.186.186 0 00-.186-.186H8.076a.185.185 0 00-.185.186v1.888c0 .102.082.185.185.185m2.953 0h2.118a.186.186 0 00.186-.185v-1.888a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.186v1.888c0 .102.082.185.185.185m12.443 1.096c-.309-.208-.948-.28-1.503-.021-.137-.935-.853-1.63-1.688-1.63-.383 0-.735.146-1.01.391a3.67 3.67 0 00-2.34-1.252l-.464-.04v1.849h-2.484v-1.85h-.077a3.7 3.7 0 00-3.33 2.054H.928a.928.928 0 00-.928.928c0 2.455.938 4.707 2.464 6.233 1.554 1.554 3.655 2.41 5.86 2.41 4.542 0 8.528-3.385 9.771-8.122 1.347.051 2.766-.563 3.665-1.545.247-.27.42-.58.524-.91.037-.118.067-.24.08-.363a.925.925 0 00-.317-.676z"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-title">DevOps Project Tracker</h1>
+          <p class="brand-subtitle">DecodeLabs Industrial Training Kit &bull; Batch 2026</p>
+        </div>
+      </div>
+
+      <div class="header-badges">
+        <span class="badge badge-docker" id="docker-status-badge">
+          <span class="status-pulse"></span>
+          Dockerized: <code>nginx:alpine</code>
+        </span>
+        <span class="badge badge-port" id="port-status-badge">
+          Host <code>8080</code> &rarr; Container <code>80</code>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-content" id="main-content">
+    
+    <!-- Hero / Project Overview Section -->
+    <section class="overview-section" aria-labelledby="overview-heading">
+      <div class="overview-card">
+        <div class="overview-text">
+          <span class="pill-label">Project 4: Containerization with Docker</span>
+          <h2 id="overview-heading">Solving the "It Works on My Machine" Problem</h2>
+          <p>
+            Welcome to the DevOps Engineering Command Center. Traditional applications rely on host operating system libraries, leading to configuration drift and environment mismatches. This application is packaged into an immutable, portable Docker container that runs identically across macOS, Linux, and Cloud environments.
+          </p>
+          <div class="milestone-tags">
+            <span class="tag completed">&#10003; Project 1: Linux Basics</span>
+            <span class="tag completed">&#10003; Project 2: Git Version Control</span>
+            <span class="tag completed">&#10003; Project 3: CI/CD Pipeline</span>
+            <span class="tag active">&#9881; Project 4: Docker Containerization</span>
+          </div>
+        </div>
+        <div class="architecture-diagram" aria-label="Containerization Lifecycle diagram">
+          <div class="lifecycle-step">
+            <div class="step-icon">&#128196;</div>
+            <div class="step-title">1. Blueprint</div>
+            <div class="step-desc"><code>Dockerfile</code></div>
+          </div>
+          <div class="lifecycle-arrow">&rarr;</div>
+          <div class="lifecycle-step">
+            <div class="step-icon">&#9881;</div>
+            <div class="step-title">2. Assembly</div>
+            <div class="step-desc"><code>docker build</code></div>
+          </div>
+          <div class="lifecycle-arrow">&rarr;</div>
+          <div class="lifecycle-step active">
+            <div class="step-icon">&#128011;</div>
+            <div class="step-title">3. Live Process</div>
+            <div class="step-desc"><code>docker run -d</code></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics Dashboard Row -->
+    <section class="metrics-row" aria-label="Project Statistics">
+      <div class="metric-card">
+        <div class="metric-icon" style="color: #60a5fa;">&#128202;</div>
+        <div class="metric-info">
+          <div class="metric-value" id="stat-total-tasks">0</div>
+          <div class="metric-label">Total DevOps Tasks</div>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-icon" style="color: #fbbf24;">&#9203;</div>
+        <div class="metric-info">
+          <div class="metric-value" id="stat-in-progress">0</div>
+          <div class="metric-label">Tasks In Progress</div>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-icon" style="color: #34d399;">&#9989;</div>
+        <div class="metric-info">
+          <div class="metric-value" id="stat-completed">0</div>
+          <div class="metric-label">Completed Tasks</div>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-icon" style="color: #38bdf8;">&#128011;</div>
+        <div class="metric-info">
+          <div class="metric-value" id="stat-completion-rate">0%</div>
+          <div class="metric-label">Project Completion</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Task Management Section -->
+    <section class="tasks-section" aria-labelledby="tasks-heading">
+      <div class="section-header">
+        <div>
+          <h2 id="tasks-heading">DevOps Task Management</h2>
+          <p class="section-desc">Manage containerization deliverables, infrastructure tasks, and verification milestones.</p>
+        </div>
+        <button class="btn btn-primary" id="btn-open-modal" aria-haspopup="dialog">
+          <span class="btn-icon">&#43;</span> Add New Task
+        </button>
+      </div>
+
+      <!-- Controls: Search & Filter Tabs -->
+      <div class="task-controls">
+        <div class="filter-tabs" role="tablist" aria-label="Task status filter">
+          <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true" id="tab-all">All Tasks (<span id="count-all">0</span>)</button>
+          <button class="filter-tab" data-filter="todo" role="tab" aria-selected="false" id="tab-todo">To Do (<span id="count-todo">0</span>)</button>
+          <button class="filter-tab" data-filter="in-progress" role="tab" aria-selected="false" id="tab-in-progress">In Progress (<span id="count-in-progress">0</span>)</button>
+          <button class="filter-tab" data-filter="completed" role="tab" aria-selected="false" id="tab-completed">Completed (<span id="count-completed">0</span>)</button>
+        </div>
+
+        <div class="search-box">
+          <span class="search-icon" aria-hidden="true">&#128269;</span>
+          <input type="text" id="task-search-input" placeholder="Search tasks or tags..." aria-label="Search DevOps tasks">
+        </div>
+      </div>
+
+      <!-- Task List Container -->
+      <div class="task-grid" id="task-grid-container" aria-live="polite">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </section>
+
+    <!-- Docker Reference & Port Mapping Guide -->
+    <section class="reference-section" aria-labelledby="reference-heading">
+      <div class="section-header">
+        <div>
+          <h2 id="reference-heading">Docker Container Architecture &amp; Commands</h2>
+          <p class="section-desc">Quick reference for container deployment commands and networking architecture.</p>
+        </div>
+      </div>
+
+      <div class="reference-grid">
+        <!-- Port Mapping Diagram Card -->
+        <div class="ref-card">
+          <div class="ref-card-header">
+            <h3><span class="ref-icon">&#128279;</span> Port Mapping Mechanism (<code>-p 8080:80</code>)</h3>
+          </div>
+          <div class="ref-card-body">
+            <p>Containers run in isolated network namespaces. The <code>-p</code> flag creates a tunnel from your host machine into the container:</p>
+            <div class="port-tunnel-visual">
+              <div class="tunnel-node host-node">
+                <div class="tunnel-label">Host (MacBook)</div>
+                <div class="tunnel-port">Port 8080</div>
+                <div class="tunnel-url">http://localhost:8080</div>
+              </div>
+              <div class="tunnel-bridge">
+                <span class="tunnel-arrow">&harr; Docker Engine Bridge &harr;</span>
+                <span class="tunnel-spec"><code>-p 8080:80</code></span>
+              </div>
+              <div class="tunnel-node container-node">
+                <div class="tunnel-label">Nginx Container</div>
+                <div class="tunnel-port">Port 80</div>
+                <div class="tunnel-url">/usr/share/nginx/html</div>
+              </div>
+            </div>
+            <div class="callout-box">
+              <strong>Rule:</strong> <code>-p [HOST_PORT]:[CONTAINER_PORT]</code>. Traffic hitting <code>localhost:8080</code> is forwarded directly to Nginx listening on port <code>80</code>.
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Commands Card -->
+        <div class="ref-card">
+          <div class="ref-card-header">
+            <h3><span class="ref-icon">&#9889;</span> Essential Container Commands</h3>
+          </div>
+          <div class="ref-card-body">
+            <div class="command-list">
+              <div class="cmd-item">
+                <div class="cmd-info">
+                  <span class="cmd-purpose">Build Docker Image</span>
+                  <code class="cmd-code">docker build -t devops-project-4:v1 .</code>
+                </div>
+                <button class="btn-copy" data-copy="docker build -t devops-project-4:v1 ." title="Copy Command">Copy</button>
+              </div>
+
+              <div class="cmd-item">
+                <div class="cmd-info">
+                  <span class="cmd-purpose">Run Container (Detached + Port Map)</span>
+                  <code class="cmd-code">docker run -d --name devops-project-4 -p 8080:80 devops-project-4:v1</code>
+                </div>
+                <button class="btn-copy" data-copy="docker run -d --name devops-project-4 -p 8080:80 devops-project-4:v1" title="Copy Command">Copy</button>
+              </div>
+
+              <div class="cmd-item">
+                <div class="cmd-info">
+                  <span class="cmd-purpose">Inspect Live Logs</span>
+                  <code class="cmd-code">docker logs -f devops-project-4</code>
+                </div>
+                <button class="btn-copy" data-copy="docker logs -f devops-project-4" title="Copy Command">Copy</button>
+              </div>
+
+              <div class="cmd-item">
+                <div class="cmd-info">
+                  <span class="cmd-purpose">Stop &amp; Remove Container</span>
+                  <code class="cmd-code">docker stop devops-project-4 &amp;&amp; docker rm devops-project-4</code>
+                </div>
+                <button class="btn-copy" data-copy="docker stop devops-project-4 &amp;&amp; docker rm devops-project-4" title="Copy Command">Copy</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Add Task Modal Dialog -->
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-header">
+        <h3 id="modal-title">Create DevOps Task</h3>
+        <button class="btn-close" id="btn-close-modal" aria-label="Close modal">&times;</button>
+      </div>
+      <form id="add-task-form">
+        <div class="form-group">
+          <label for="task-title-input">Task Description <span class="required">*</span></label>
+          <input type="text" id="task-title-input" required placeholder="e.g. Configure multi-stage Docker build" autocomplete="off">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="task-category-select">Category</label>
+            <select id="task-category-select">
+              <option value="Docker">Docker</option>
+              <option value="Architecture">Architecture</option>
+              <option value="Security">Security</option>
+              <option value="CI/CD">CI/CD</option>
+              <option value="Testing">Testing</option>
+              <option value="Documentation">Documentation</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="task-priority-select">Priority</label>
+            <select id="task-priority-select">
+              <option value="High">High</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="task-status-select">Status</label>
+            <select id="task-status-select">
+              <option value="todo" selected>To Do</option>
+              <option value="in-progress">In Progress</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="btn-cancel-modal">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="btn-submit-task">Add Task</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="assertive"></div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <p class="footer-title">DecodeLabs Industrial Training Kit &bull; DevOps Project 4</p>
+        <p class="footer-desc">Containerization with Docker &bull; Batch 2026 &bull; Environment Portability &amp; Isolation</p>
+      </div>
+      <div class="footer-right">
+        <span class="footer-tag">Nginx Alpine Container</span>
+        <span class="footer-tag">Zero External Dependencies</span>
+        <span class="footer-tag">MIT Licensed</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
